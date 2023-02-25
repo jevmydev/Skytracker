@@ -1,0 +1,17 @@
+{
+    "name": "SkyTracker - Clima en tiempo real",
+    "short_name": "SkyTracker",
+    "description": "SkyTracker es una aplicación del clima que permite a los usuarios rastrear las últimas condiciones meteorológicas en su ubicación o cualquier otra parte del mundo.",
+    "keywords": ["SkyTracker", "Clima", "Meteorológico", "Temperatura"],
+    "icons": [{ "src": "/favicon.ico", "type": "image/x-icon", "sizes": "32x32" }],
+    "author": "Jeremy Díaz",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jevmydev/skytracker.git"
+    },
+    "bugs": {
+        "url": "https://github.com/jevmydev/skytracker/issues"
+    },
+    "start_url": "./index.html",
+    "homepage": "https://skytracker.netlify.app/"
+}
