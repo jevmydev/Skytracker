@@ -15,7 +15,7 @@ Aplicación del **clima** que rastrea **condiciones meteorológicas** en cualqui
   <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" alt="Icono de Netlify">
 </p>
 
-![SkyTracker - Clima en tiempo real](./readme/skytracker.png)
+![SkyTracker - Clima en tiempo real](./public/readme/skytracker.png)
 
 # Instalación y uso 🎖️
 
