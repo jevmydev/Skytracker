@@ -1,11 +1,9 @@
 import CountryTimeData from "../elements/CountryTimeData";
 import { CalendarIcon, LocationIcon } from "../elements/Icons";
 
-import { useDate } from "../hooks/useDate";
-
 export function Country({ resWeather }) {
-    const { fullDate, hour } = useDate();
-    const { fullPlace } = resWeather;
+    const { fullPlace, date } = resWeather;
+    const [fullDate, hour] = date;
 
     return (
         <section>
