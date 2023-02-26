@@ -1,5 +1,5 @@
-import CountryTimeData from "../elements/CountryTimeData";
-import { CalendarIcon, LocationIcon } from "../elements/Icons";
+import CountryTimeData from "../../elements/CountryTimeData";
+import { CalendarIcon, LocationIcon } from "../../elements/Icons";
 
 export function Country({ resWeather }) {
     const { fullPlace, date } = resWeather;

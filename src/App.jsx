@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 
-import Header from "./components/Header";
-import Country from "./components/Country";
-import Weather from "./components/Weather";
-import WeatherMap from "./components/WeatherMap";
-import Forecasts from "./components/Forecasts";
-import Footer from "./components/Footer";
+import Header from "./components/Header/Header";
+import Country from "./components/Country/Country";
+import Weather from "./components/Weather/Weather";
+import WeatherMap from "./components/Weather/WeatherMap";
+import Forecasts from "./components/Forecasts/Forecasts";
+import Footer from "./components/Footer/Footer";
 
 import Loading from "./elements/Loading";
 import Error from "./elements/Error";

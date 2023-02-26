@@ -1,20 +1,9 @@
 import debounce from "just-debounce-it";
 import { useCallback, useRef } from "react";
 
-import Button from "../elements/Button";
-import { SunIcon } from "../elements/Icons";
+import HeaderSuggestion from "./HeaderSuggestion";
 
-import { useLocation } from "../hooks/useLocation";
-
-export function HeaderSuggestion({ location }) {
-    const { place } = location;
-
-    return (
-        <li>
-            <Button type="submit">{place}</Button>
-        </li>
-    );
-}
+import { useLocation } from "../../hooks/useLocation";
 
 export function HeaderSearch() {
     const { locationSearch, clearLocationSearch, getLocationSearch, updateLocation } = useLocation();
@@ -63,20 +52,4 @@ export function HeaderSearch() {
     );
 }
 
-export function Header() {
-    return (
-        <header>
-            <div className="max-w-screen-md mx-auto p-4 gap-4 flex flex-col sm:flex-row sm:items-center justify-between">
-                <h1>
-                    <a className="flex items-center gap-2 text-2xl font-bold" href="/">
-                        <SunIcon stroke="stroke-sky-200" />
-                        SkyTracker
-                    </a>
-                </h1>
-                <HeaderSearch />
-            </div>
-        </header>
-    );
-}
-
-export default Header;
+export default HeaderSearch;

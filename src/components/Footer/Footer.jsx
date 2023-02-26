@@ -1,4 +1,4 @@
-import Anchor from "../elements/Anchor";
+import Anchor from "../../elements/Anchor";
 
 export function Footer() {
     return (

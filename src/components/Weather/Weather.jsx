@@ -1,5 +1,5 @@
-import CountryTimeData from "../elements/CountryTimeData";
-import { FeelsLikeIcon, HumidityIcon, TemperatureIcon, TemperatureMaxIcon, TemperatureMinIcon } from "../elements/Icons";
+import CountryTimeData from "../../elements/CountryTimeData";
+import { FeelsLikeIcon, HumidityIcon, TemperatureIcon, TemperatureMaxIcon, TemperatureMinIcon } from "../../elements/Icons";
 
 export function Weather({ resWeather }) {
     const { temp, description, icon, humidity, minTemp, maxTemp, sunrise, sunset, likeTemp } = resWeather;
