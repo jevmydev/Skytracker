@@ -21,10 +21,10 @@ Aplicación del **clima** que rastrea **condiciones meteorológicas** en cualqui
 
 **¡Código abierto al mundo!**
 
--   Puedes utilizar el producto realizando un `git clone https://github.com/jevmydev/navigatex` en tu terminal.
+-   Puedes utilizar el producto realizando un `git clone https://github.com/jevmydev/skytracker` en tu terminal.
 -   Luego emplear `npm run dev` en tu terminal para desplegar un entorno de desarrollo en la web.
 -   Es necesario crear el archivo `.env.local`.
--   Después, crear las keys: `VITE_WEATHER_APIKEY` (generado en `https://openweathermap.org/api/one-call-3`) & `VITE_WEATHERMAP_APIKEY` (generado en `https://www.maptiler.com/`).
+-   Después, crear las keys: `VITE_WEATHER_APIKEY` (generado en `https://openweathermap.org/api/`) & `VITE_WEATHERMAP_APIKEY` (generado en `https://www.maptiler.com/`).
 
 También dispones de:
 
