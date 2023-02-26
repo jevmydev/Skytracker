@@ -5,6 +5,7 @@ import Country from "./components/Country";
 import Weather from "./components/Weather";
 import WeatherMap from "./components/WeatherMap";
 import Forecasts from "./components/Forecasts";
+import Footer from "./components/Footer";
 
 import Loading from "./elements/Loading";
 import Error from "./elements/Error";
@@ -44,6 +45,7 @@ function App() {
                     {error && <Error />}
                 </div>
             </main>
+            <Footer />
         </>
     );
 }
