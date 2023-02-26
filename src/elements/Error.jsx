@@ -1,4 +1,4 @@
-import { Anchor } from "./Anchor";
+import Anchor from "./Anchor";
 
 export function Error() {
     return (
