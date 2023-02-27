@@ -28,6 +28,16 @@ function App() {
         updateForecasts(location);
     }, [location]);
 
+    useEffect(() => {
+        if (!weather) return;
+
+        const callNotification = () => {
+            if (Notification.permission === "granted") new Notification(`${weather.place} - ${weather.temp}: ${weather.description}`);
+        };
+
+        Notification.requestPermission(callNotification);
+    }, [weather]);
+
     return (
         <>
             <Header />
