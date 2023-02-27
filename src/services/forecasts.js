@@ -8,8 +8,8 @@ function compromiseForecasts({ forecasts }) {
 
         return {
             id: dt,
-            temp: formatTemp({ temp: main.temp }),
             icon: `${WEATHER_URL_ICON}${weatherFirst.icon}.png`,
+            temp: formatTemp({ temp: main.temp }),
             date: formatDate({ date: new Date(dt_txt), dateStyle: "medium" })
         };
     });
@@ -21,9 +21,8 @@ export async function getForecasts({ lat = 10, lon = 10, lang = "es", limit = 20
     try {
         const res = await fetch(`${FORECASTS_URL}?lat=${lat}&lon=${lon}&lang=${lang}&units=${units}&cnt=${limit}&appid=${import.meta.env.VITE_WEATHER_APIKEY}`);
         const forecasts = await res.json();
-        const { list } = forecasts;
 
-        return compromiseForecasts({ forecasts: list });
+        return compromiseForecasts({ forecasts: forecasts?.list });
     } catch (err) {
         throw new Error("Fetch to forecast or compromise forecast API");
     }
