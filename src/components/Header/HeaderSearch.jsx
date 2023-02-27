@@ -1,16 +1,19 @@
 import debounce from "just-debounce-it";
 import { useCallback, useRef } from "react";
 
-import HeaderSuggestion from "./HeaderSuggestion";
-
 import { useLocation } from "../../hooks/useLocation";
+import { DEBOUNCE_WAIT_TIME_SEARCH } from "../../utils/const";
 
-export function HeaderSearch() {
+import LocationSuggestion from "./LocationSuggestion";
+
+function HeaderSearch() {
     const { locationSearch, clearLocationSearch, getLocationSearch, updateLocation } = useLocation();
     const searchRef = useRef();
 
+    const isLocationSearchValid = locationSearch?.length > 0 && locationSearch[0];
+
     const debounceGetLocationSearch = useCallback(
-        debounce(({ search }) => getLocationSearch({ search }), 300),
+        debounce(({ search }) => getLocationSearch({ search }), DEBOUNCE_WAIT_TIME_SEARCH),
         []
     );
 
@@ -21,7 +24,7 @@ export function HeaderSearch() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (locationSearch?.length === 0 || !locationSearch) return;
+        if (!isLocationSearchValid) return;
 
         const { lat, lon } = locationSearch[0];
         updateLocation({ lat, lon });
@@ -39,11 +42,11 @@ export function HeaderSearch() {
                 onChange={handleChange}
                 ref={searchRef}
             />
-            {locationSearch && (
+            {isLocationSearchValid && (
                 <div className="absolute w-full bg-zinc-600 my-2 p-4 rounded">
                     <ul className="flex flex-col gap-2">
                         {locationSearch.map((location, i) => (
-                            <HeaderSuggestion key={`Suggestion ${i}`} location={location} />
+                            <LocationSuggestion key={`LocationSuggestion-${i}`} location={location} />
                         ))}
                     </ul>
                 </div>
