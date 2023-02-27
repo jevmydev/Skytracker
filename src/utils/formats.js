@@ -25,9 +25,9 @@ export function formatSplitComma({ text }) {
 }
 
 export function formatPercentage({ value }) {
-    return value + "%";
+    return `${value}%`;
 }
 
 export function capitalize({ text }) {
-    return text.charAt().toUpperCase() + text.slice(1);
+    return text.charAt(0).toUpperCase() + text.slice(1);
 }
