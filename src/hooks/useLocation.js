@@ -1,4 +1,4 @@
-import { useEffect, useCallback, useContext, useState } from "react";
+import { useEffect, useCallback, useContext, useState, useRef } from "react";
 
 import { DEFAULT_POSITION } from "../utils/const";
 
@@ -8,12 +8,17 @@ import { getLocation } from "../services/location";
 export function useLocation() {
     const [locationSearch, setLocationSearch] = useState(null);
     const { location, setLocation } = useContext(LocationContext);
+    const previusSearch = useRef(location);
 
     const updateLocation = (location) => setLocation(location);
     const clearLocationSearch = () => setLocationSearch(null);
 
     const getLocationSearch = useCallback(async ({ search }) => {
+        if (search === previusSearch.current) return;
+
         try {
+            previusSearch.current = search;
+
             const newLocation = await getLocation({ search });
             setLocationSearch(newLocation);
         } catch (err) {
