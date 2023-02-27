@@ -18,7 +18,7 @@ module.exports = {
     },
     plugins: ["react"],
     rules: {
-        indent: [RULES.WARN, 4],
+        indent: [RULES.OFF, 4],
         quotes: [RULES.WARN, "double"],
         semi: [RULES.WARN, "always"],
         "linebreak-style": RULES.OFF,
