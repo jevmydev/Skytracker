@@ -1,17 +1,19 @@
 import { WEATHER_URL, WEATHER_URL_ICON, TRANSFORM_TO_MS } from "../utils/const";
 import { formatTemp, formatPercentage, formatSplitComma, capitalize, formatDate } from "../utils/formats";
 
-function compromiseWeather({ resWeather }) {
+import { getLocalDate } from "./localDate";
+
+async function compromiseWeather({ resWeather, lon, lat }) {
+    const localDate = await getLocalDate({ lon, lat });
+
     return resWeather?.map((dataWeather) => {
-        const { weather, main, sys, name, dt } = dataWeather;
-        const weatherFirst = weather ? weather[0] : {};
+        const { weather, main, sys, name } = dataWeather;
+        const weatherFirst = weather[0];
 
         return {
-            place: name,
-            fullPlace: formatSplitComma({ text: `${name} ${sys?.country}` }),
-            country: sys?.country,
+            place: formatSplitComma({ text: `${name} ${sys?.country}` }),
             icon: `${WEATHER_URL_ICON}${weatherFirst?.icon}.png`,
-            date: formatDate({ date: new Date(dt * TRANSFORM_TO_MS) }),
+            date: formatDate({ date: new Date(localDate) }),
             description: capitalize({ text: weatherFirst?.description }),
             temp: formatTemp({ temp: main?.temp }),
             maxTemp: formatTemp({ temp: main?.temp_max }),
@@ -31,7 +33,7 @@ export async function getWeather({ lat = 10, lon = 10, lang = "es", units = "met
         const res = await fetch(`${WEATHER_URL}?lat=${lat}&lon=${lon}&lang=${lang}&units=${units}&appid=${import.meta.env.VITE_WEATHER_APIKEY}`);
         const weather = await res.json();
 
-        return compromiseWeather({ resWeather: [weather] });
+        return compromiseWeather({ resWeather: [weather], lon, lat });
     } catch (err) {
         throw new Error("Fetch to weather or compromise API");
     }
