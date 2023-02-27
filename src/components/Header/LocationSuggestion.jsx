@@ -1,6 +1,6 @@
 import Button from "../../elements/Button";
 
-export function HeaderSuggestion({ location }) {
+export function LocationSuggestion({ location }) {
     const { place } = location;
 
     return (
@@ -10,4 +10,4 @@ export function HeaderSuggestion({ location }) {
     );
 }
 
-export default HeaderSuggestion;
+export default LocationSuggestion;
