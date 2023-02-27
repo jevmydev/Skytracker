@@ -14,6 +14,7 @@ async function compromiseWeather({ resWeather, lon, lat }) {
             place: formatSplitComma({ text: `${name} ${sys?.country}` }),
             icon: `${WEATHER_URL_ICON}${weatherFirst?.icon}.png`,
             date: formatDate({ date: new Date(localDate) }),
+            state: capitalize({ text: weatherFirst.main }),
             description: capitalize({ text: weatherFirst?.description }),
             temp: formatTemp({ temp: main?.temp }),
             maxTemp: formatTemp({ temp: main?.temp_max }),

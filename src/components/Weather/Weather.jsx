@@ -1,8 +1,13 @@
 import CountryTimeData from "../../elements/CountryTimeData";
-import { FeelsLikeIcon, HumidityIcon, TemperatureIcon, TemperatureMaxIcon, TemperatureMinIcon } from "../../elements/Icons";
+import { FeelsLikeIcon, HumidityIcon, Idea, TemperatureIcon, TemperatureMaxIcon, TemperatureMinIcon } from "../../elements/Icons";
+
+import { useWeatherRecommendations } from "../../hooks/useWeatherRecommendations";
 
 export function Weather({ resWeather }) {
-    const { temp, description, icon, humidity, minTemp, maxTemp, sunrise, sunset, likeTemp } = resWeather;
+    const { temp, state, description, icon, humidity, minTemp, maxTemp, sunrise, sunset, likeTemp } = resWeather;
+    const { recommendations } = useWeatherRecommendations({ state });
+
+    const randomNumber = Math.round(Math.random());
 
     return (
         <section>
@@ -29,6 +34,11 @@ export function Weather({ resWeather }) {
                         <CountryTimeData data={`Puesta del sol: ${sunset}`} icon={FeelsLikeIcon} />
                     </div>
                 </div>
+                {recommendations && (
+                    <div>
+                        <CountryTimeData data={recommendations[randomNumber]} icon={Idea} />
+                    </div>
+                )}
             </div>
         </section>
     );
