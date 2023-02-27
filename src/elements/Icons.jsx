@@ -8,6 +8,17 @@ export function SunIcon({ width = "w-12", height = "h-12", stroke = "stroke-curr
     );
 }
 
+export function Idea({ width = "w-10", height = "h-10", stroke = "stroke-current" }) {
+    return (
+        <svg className={`${width} ${height} ${stroke}`} viewBox="0 0 24 24" stroke="none" fill="none">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+            <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+            <line x1="9.7" y1="17" x2="14.3" y2="17" />
+        </svg>
+    );
+}
+
 export function LocationIcon({ width = "w-6", height = "h-6", stroke = "stroke-current" }) {
     return (
         <svg className={`${width} ${height} ${stroke}`} viewBox="0 0 24 24" stroke="none" fill="none">
