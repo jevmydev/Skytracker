@@ -8,7 +8,9 @@ import "./main.css";
 import { LocationProvider } from "./context/location";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <LocationProvider>
-        <App />
-    </LocationProvider>
+    <React.StrictMode>
+        <LocationProvider>
+            <App />
+        </LocationProvider>
+    </React.StrictMode>
 );
