@@ -2,7 +2,7 @@ import CountryTimeData from "../../elements/CountryTimeData";
 import { CalendarIcon, LocationIcon } from "../../elements/Icons";
 
 export function Country({ resWeather }) {
-    const { fullPlace, date } = resWeather;
+    const { place, date } = resWeather;
     const [fullDate, hour] = date;
 
     return (
@@ -17,7 +17,7 @@ export function Country({ resWeather }) {
                     <CountryTimeData data={fullDate} icon={CalendarIcon} />
                 </div>
                 <div>
-                    <CountryTimeData data={fullPlace} icon={LocationIcon} />
+                    <CountryTimeData data={place} icon={LocationIcon} />
                 </div>
             </div>
         </section>
