@@ -21,7 +21,7 @@ export function formatDate({ date, dateStyle = "full", timeStyle = "short" }) {
 }
 
 export function formatSplitComma({ text }) {
-    return text.split(" ").join(", ");
+    return text.split(" ", 2).join(", ");
 }
 
 export function formatPercentage({ value }) {
